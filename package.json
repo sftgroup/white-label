@@ -1,0 +1,116 @@
+{
+  "name": "@0xainetoem/white-label",
+  "version": "1.0.0",
+  "description": "White-label SDK for 0xAI ecosystem — brand injection, CLI deployment, SDK integrations",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.js",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli/index.js"
+    },
+    "./bitbyte": {
+      "import": "./dist/integrations/bitbyte.js",
+      "types": "./dist/integrations/bitbyte.d.ts"
+    },
+    "./predx": {
+      "import": "./dist/integrations/predx.js",
+      "types": "./dist/integrations/predx.d.ts"
+    },
+    "./ceres": {
+      "import": "./dist/integrations/ceres.js",
+      "types": "./dist/integrations/ceres.d.ts"
+    },
+    "./bridge": {
+      "import": "./dist/integrations/bridge.js",
+      "types": "./dist/integrations/bridge.d.ts"
+    },
+    "./oxachain": {
+      "import": "./dist/integrations/oxachain.js",
+      "types": "./dist/integrations/oxachain.d.ts"
+    },
+    "./cryptchat": {
+      "import": "./dist/integrations/cryptchat.js",
+      "types": "./dist/integrations/cryptchat.d.ts"
+    },
+    "./zenonft": {
+      "import": "./dist/integrations/zenonft.js",
+      "types": "./dist/integrations/zenonft.d.ts"
+    }
+  },
+  "bin": {
+    "wl": "bin/wl.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@bitbytev4/sdk": {
+      "optional": true
+    },
+    "@0xpredx/sdk": {
+      "optional": true
+    },
+    "@ceresv2/sdk": {
+      "optional": true
+    },
+    "@0xbridge/sdk": {
+      "optional": true
+    },
+    "oxachain-sdk": {
+      "optional": true
+    },
+    "@cryptchat/sdk": {
+      "optional": true
+    },
+    "@zenonft/sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@bitbytev4/sdk": "^2.0.0",
+    "@cryptchat/sdk": "^0.1.1",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@zenonft/sdk": "^1.0.1",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "white-label",
+    "branding",
+    "web3",
+    "0xai"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sftgroup/white-label.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sftgroup/white-label/issues"
+  },
+  "homepage": "https://github.com/sftgroup/white-label#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

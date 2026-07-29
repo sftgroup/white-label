@@ -1,0 +1,36 @@
+{
+  "$schema": "https://0xai-website.pages.dev/branding-schema.json",
+  "brand": {
+    "name": "客户品牌名",
+    "shortName": "客户简称",
+    "logo": {
+      "dark": "https://cdn.客户.com/logo-dark.svg",
+      "light": "https://cdn.客户.com/logo-light.svg",
+      "favicon": "https://cdn.客户.com/favicon.ico"
+    },
+    "colors": {
+      "primary": "#ff6600",
+      "primaryHover": "#e55d00",
+      "secondary": "#1a1a2e",
+      "accent": "#00d4aa"
+    },
+    "domain": "客户.com",
+    "contactEmail": "support@客户.com",
+    "social": {
+      "twitter": "https://x.com/客户",
+      "discord": "https://discord.gg/客户",
+      "telegram": "https://t.me/客户"
+    }
+  },
+  "chain": {
+    "network": "mainnet",
+    "rpcUrl": "https://rpc.客户.com",
+    "chainId": 8888,
+    "explorerUrl": "https://explorer.客户.com",
+    "nativeToken": "TICKER"
+  },
+  "features": {
+    "modules": ["swap", "perpetual"],
+    "enabledChains": ["ethereum", "bsc"]
+  }
+}
