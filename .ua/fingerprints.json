@@ -1,0 +1,713 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "ec92feb763bb2841b16cd3a5d2f228bf58f68e7c",
+  "generatedAt": "2026-07-30T00:09:45.404Z",
+  "files": {
+    "bin/wl.js": {
+      "filePath": "bin/wl.js",
+      "contentHash": "5ea14ea4462bf58df8947481e410c1b3b8f2b1a7813c6d7697dc942425316366",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/cli/index.ts": {
+      "filePath": "src/cli/index.ts",
+      "contentHash": "262239edbd2d4ca25d1464c473d416fafd0e85fb5a7e1a4d77ac5fd01002b5fe",
+      "functions": [
+        {
+          "name": "detectProject",
+          "params": [],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "needsContracts",
+          "params": [
+            "project"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getContractScript",
+          "params": [
+            "project"
+          ],
+          "returnType": "string | null",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "deployOxaChain",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "deployBitByte",
+          "params": [
+            "server",
+            "domain"
+          ],
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "deployPredX",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "deployCryptChat",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "deployBridge",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "deployZenoNFT",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "deployCeres",
+          "params": [
+            "server",
+            "_domain"
+          ],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": false,
+          "lineCount": 20
+        },
+        {
+          "name": "brand",
+          "params": [],
+          "exported": false,
+          "lineCount": 49
+        },
+        {
+          "name": "setup",
+          "params": [
+            "args"
+          ],
+          "exported": false,
+          "lineCount": 118
+        },
+        {
+          "name": "deploy",
+          "params": [
+            "args"
+          ],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "update",
+          "params": [
+            "args"
+          ],
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "deployContracts",
+          "params": [
+            "args"
+          ],
+          "exported": false,
+          "lineCount": 72
+        },
+        {
+          "name": "list",
+          "params": [],
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "tryCheckBranding",
+          "params": [
+            "project"
+          ],
+          "exported": false,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "fs",
+          "specifiers": [
+            "* as fs"
+          ]
+        },
+        {
+          "source": "path",
+          "specifiers": [
+            "* as path"
+          ]
+        },
+        {
+          "source": "child_process",
+          "specifiers": [
+            "execSync"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 539,
+      "hasStructuralAnalysis": true
+    },
+    "src/cli/types.ts": {
+      "filePath": "src/cli/types.ts",
+      "contentHash": "1f695178110e119f0c3465b2193192a57eb560b32e2ca1025d051050ed0e5ad3",
+      "functions": [
+        {
+          "name": "defineDeployer",
+          "params": [
+            "config"
+          ],
+          "returnType": "DeployerConfig",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "defineDeployer"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "src/index.ts": {
+      "filePath": "src/index.ts",
+      "contentHash": "c861b29c5fa9960d4c942d04e02e1fc6537bcc9827ccebbc6bec127c116fd117",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "BrandProvider",
+        "useBrand",
+        "BrandLogo",
+        "defineBrand",
+        "getBrand",
+        "defaultBrand",
+        "BrandConfig",
+        "injectCSSVars",
+        "injectFavicon",
+        "injectMeta"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/bitbyte.ts": {
+      "filePath": "src/integrations/bitbyte.ts",
+      "contentHash": "4d35a938f9a3771bb4635c1352e96ef2e7cd91bef27f5dc2f67232a06840ec56",
+      "functions": [
+        {
+          "name": "createBitByteSDK",
+          "params": [
+            "config"
+          ],
+          "returnType": "BitByteWithBrand",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@bitbytev4/sdk",
+          "specifiers": [
+            "BitByteSDK",
+            "BitByteSDKConfig"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createBitByteSDK",
+        "BitByteSDK",
+        "BitByteSDKConfig"
+      ],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/bridge.ts": {
+      "filePath": "src/integrations/bridge.ts",
+      "contentHash": "9cb2a2f455eb5a6a2f0ebd000051358699a26b0370caf570da75fb83dac4b482",
+      "functions": [
+        {
+          "name": "createBridgeSDK",
+          "params": [
+            "opts"
+          ],
+          "returnType": "BridgeWithBrand",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@0xbridge/sdk",
+          "specifiers": [
+            "BridgeSDK"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createBridgeSDK",
+        "BridgeSDK"
+      ],
+      "totalLines": 75,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/ceres.ts": {
+      "filePath": "src/integrations/ceres.ts",
+      "contentHash": "39b1a5cd01fc771d67bac0f0a2a84d12be5df993fa434277268ec47a9c247908",
+      "functions": [
+        {
+          "name": "createCeresConfig",
+          "params": [
+            "baseConfig"
+          ],
+          "returnType": "CeresBrandConfig & Record<string, unknown>",
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createCeresConfig"
+      ],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/cryptchat.ts": {
+      "filePath": "src/integrations/cryptchat.ts",
+      "contentHash": "d68a41e42310b4d08f43b5912dd96213c0f0d4255371fab7361c22163669f443",
+      "functions": [
+        {
+          "name": "createCryptChat",
+          "params": [
+            "options"
+          ],
+          "returnType": "CryptChatClient",
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@cryptchat/sdk",
+          "specifiers": [
+            "CryptChatClient",
+            "CryptChatClientOptions"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createCryptChat",
+        "CryptChatClient",
+        "CryptChatClientOptions"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/oxachain.ts": {
+      "filePath": "src/integrations/oxachain.ts",
+      "contentHash": "335693b5edbd762200d7956e8ed9e2ce9faee97eb65575a6d785650d9e40b7dd",
+      "functions": [
+        {
+          "name": "createOxaChainClient",
+          "params": [
+            "opts"
+          ],
+          "returnType": "OxaChainClient",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "oxachain-sdk",
+          "specifiers": [
+            "OxaChainClient",
+            "OxaChainClientOptions"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createOxaChainClient",
+        "OxaChainClient",
+        "OxaChainClientOptions"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/predx.ts": {
+      "filePath": "src/integrations/predx.ts",
+      "contentHash": "358de3958a04a2616022928c1adde017b743197705143a6750052dfcdebd0b9b",
+      "functions": [
+        {
+          "name": "createPredXClient",
+          "params": [
+            "config"
+          ],
+          "returnType": "PredXWithBrand",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@0xpredx/sdk",
+          "specifiers": [
+            "PredXClient",
+            "PredXConfig"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createPredXClient",
+        "PredXClient",
+        "PredXConfig"
+      ],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "src/integrations/zenonft.ts": {
+      "filePath": "src/integrations/zenonft.ts",
+      "contentHash": "8aaa9aed41eca4d5f6ff3d8ecf3596fdfcfe1325f9c300b758b50dce88d6b967",
+      "functions": [
+        {
+          "name": "createZenoNFT",
+          "params": [
+            "opts"
+          ],
+          "returnType": "ZenoNFTSDK",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@zenonft/sdk",
+          "specifiers": [
+            "ZenoNFTSDK",
+            "SDKConfig"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        }
+      ],
+      "exports": [
+        "createZenoNFT",
+        "ZenoNFTSDK",
+        "SDKConfig"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/react/index.tsx": {
+      "filePath": "src/react/index.tsx",
+      "contentHash": "40a108217d15b6fa829bf247cd0f306cf519ba1c4613fa9eea2ad7194b3da547",
+      "functions": [
+        {
+          "name": "BrandProvider",
+          "params": [
+            "{ brand, children }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "useBrand",
+          "params": [],
+          "returnType": "BrandConfig",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "BrandLogo",
+          "params": [
+            "{ variant = 'dark', className, style }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "createContext",
+            "useContext",
+            "useEffect",
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "BrandConfig"
+          ]
+        },
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "getBrand"
+          ]
+        },
+        {
+          "source": "../utils/css-vars.js",
+          "specifiers": [
+            "injectCSSVars"
+          ]
+        },
+        {
+          "source": "../utils/favicon.js",
+          "specifiers": [
+            "injectFavicon"
+          ]
+        },
+        {
+          "source": "../utils/meta.js",
+          "specifiers": [
+            "injectMeta"
+          ]
+        }
+      ],
+      "exports": [
+        "BrandProvider",
+        "useBrand",
+        "BrandLogo"
+      ],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "src/types.ts": {
+      "filePath": "src/types.ts",
+      "contentHash": "b15f9315f722640a263583684167a80d47a19eb6259b55cb5a36e319e567d0cf",
+      "functions": [
+        {
+          "name": "defineBrand",
+          "params": [
+            "config"
+          ],
+          "returnType": "BrandConfig",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getBrand",
+          "params": [],
+          "returnType": "BrandConfig",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "deepMerge",
+          "params": [
+            "target",
+            "source"
+          ],
+          "returnType": "T",
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "defaultBrand",
+        "defineBrand",
+        "getBrand"
+      ],
+      "totalLines": 102,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/css-vars.ts": {
+      "filePath": "src/utils/css-vars.ts",
+      "contentHash": "ff9a1a3a925642328484da5d6703f0f78b52d5368eb6d246b507210b001b45f9",
+      "functions": [
+        {
+          "name": "injectCSSVars",
+          "params": [
+            "brand"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "BrandConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "injectCSSVars"
+      ],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/favicon.ts": {
+      "filePath": "src/utils/favicon.ts",
+      "contentHash": "976165cbe17d82c4ee62a4be956362903563d2d012ab3162ca826b8354f3e4db",
+      "functions": [
+        {
+          "name": "injectFavicon",
+          "params": [
+            "brand"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "BrandConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "injectFavicon"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/meta.ts": {
+      "filePath": "src/utils/meta.ts",
+      "contentHash": "aa8801da549f251d36866fa5c02249e4e35362d6a1da51a23d6751b2db4ef852",
+      "functions": [
+        {
+          "name": "injectMeta",
+          "params": [
+            "brand"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "setMetaProperty",
+          "params": [
+            "property",
+            "content"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "setMetaName",
+          "params": [
+            "name",
+            "content"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../types.js",
+          "specifiers": [
+            "BrandConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "injectMeta"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

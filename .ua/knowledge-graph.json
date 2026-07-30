@@ -1,0 +1,1314 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "@0xainetoem/white-label",
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "Markdown",
+      "JSON"
+    ],
+    "frameworks": [
+      "React"
+    ],
+    "description": "White-label SDK for 0xAI ecosystem — brand injection, CLI deployment, SDK integrations",
+    "analyzedAt": "2026-07-30T00:08:55.484Z",
+    "gitCommitHash": "ec92feb763bb2841b16cd3a5d2f228bf58f68e7c"
+  },
+  "nodes": [
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview and quick-start guide for the white-label SDK. Documents CLI usage, React integration, and deployment workflow for all 8 ecosystem products.",
+      "tags": [
+        "documentation",
+        "readme",
+        "quickstart"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Written in Chinese"
+    },
+    {
+      "id": "document:DOCS.md",
+      "type": "document",
+      "name": "DOCS.md",
+      "filePath": "DOCS.md",
+      "summary": "Detailed usage manual covering architecture overview, CI/CD integration, Nginx configuration, troubleshooting, and step-by-step white-label guides for each product.",
+      "tags": [
+        "documentation",
+        "manual",
+        "guide"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Written in Chinese"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "NPM package manifest for @0xainetoem/white-label. Defines exports for React, CLI, and 8 SDK integrations, peer dependencies, and build scripts.",
+      "tags": [
+        "config",
+        "npm",
+        "package-manifest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler configuration targeting ES2022 with ESNext modules, React JSX support, and declaration file generation.",
+      "tags": [
+        "config",
+        "typescript",
+        "compiler-options"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:bin/wl.js",
+      "type": "file",
+      "name": "wl.js",
+      "filePath": "bin/wl.js",
+      "summary": "CLI entry point that dynamically imports the compiled CLI module.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "src/index.ts",
+      "summary": "SDK main entry point. Re-exports all public API: React components, brand utilities, types, and CSS/favicon/meta injectors.",
+      "tags": [
+        "entry-point",
+        "export",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "src/types.ts",
+      "summary": "Core type definitions including BrandConfig interface, default brand configuration, brand loading functions (defineBrand, getBrand), and deep merge utility.",
+      "tags": [
+        "types",
+        "brand-config",
+        "core"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/react/index.tsx",
+      "type": "file",
+      "name": "index.tsx",
+      "filePath": "src/react/index.tsx",
+      "summary": "React integration providing BrandProvider context, useBrand hook, and BrandLogo component. Automatically injects CSS variables, favicon, and meta tags.",
+      "tags": [
+        "react",
+        "provider",
+        "context",
+        "hook",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/css-vars.ts",
+      "type": "file",
+      "name": "css-vars.ts",
+      "filePath": "src/utils/css-vars.ts",
+      "summary": "Utility to inject brand colors as CSS custom properties on the document root element.",
+      "tags": [
+        "utility",
+        "css",
+        "brand-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/utils/favicon.ts",
+      "type": "file",
+      "name": "favicon.ts",
+      "filePath": "src/utils/favicon.ts",
+      "summary": "Utility to dynamically replace the favicon link element with the brand's favicon URL.",
+      "tags": [
+        "utility",
+        "favicon",
+        "brand-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/utils/meta.ts",
+      "type": "file",
+      "name": "meta.ts",
+      "filePath": "src/utils/meta.ts",
+      "summary": "Utility to inject brand-aware meta tags including Open Graph, Twitter Card, and description tags.",
+      "tags": [
+        "utility",
+        "meta",
+        "seo",
+        "brand-injection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/cli/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "src/cli/index.ts",
+      "summary": "CLI tool for white-label deployment. Provides commands: brand, setup, deploy, deploy-contracts, update, list. Supports 8 products with automated branding, contract deployment, and server deployment via SSH.",
+      "tags": [
+        "cli",
+        "deployment",
+        "devops"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/cli/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "src/cli/types.ts",
+      "summary": "CLI type definitions including DeployerConfig interface and defineDeployer registration function.",
+      "tags": [
+        "types",
+        "cli",
+        "deployer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/integrations/bitbyte.ts",
+      "type": "file",
+      "name": "bitbyte.ts",
+      "filePath": "src/integrations/bitbyte.ts",
+      "summary": "BitByte DEX SDK integration. Wraps @bitbytev4/sdk with brand-aware wrapper providing name and primaryColor from white-label config.",
+      "tags": [
+        "integration",
+        "bitbyte",
+        "dex",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/predx.ts",
+      "type": "file",
+      "name": "predx.ts",
+      "filePath": "src/integrations/predx.ts",
+      "summary": "PredX prediction market SDK integration. Wraps @0xpredx/sdk with brand-aware wrapper providing name and primaryColor.",
+      "tags": [
+        "integration",
+        "predx",
+        "prediction-market",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/zenonft.ts",
+      "type": "file",
+      "name": "zenonft.ts",
+      "filePath": "src/integrations/zenonft.ts",
+      "summary": "ZenoNFT marketplace SDK integration. Wraps @zenonft/sdk with brand injection via setBrand() method.",
+      "tags": [
+        "integration",
+        "zenonft",
+        "nft",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/oxachain.ts",
+      "type": "file",
+      "name": "oxachain.ts",
+      "filePath": "src/integrations/oxachain.ts",
+      "summary": "OxaChain blockchain SDK integration. Wraps oxachain-sdk with brand injection via constructor options.",
+      "tags": [
+        "integration",
+        "oxachain",
+        "blockchain",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/bridge.ts",
+      "type": "file",
+      "name": "bridge.ts",
+      "filePath": "src/integrations/bridge.ts",
+      "summary": "0xBridge cross-chain bridge SDK integration. Wraps @0xbridge/sdk with brand-aware wrapper providing name and primaryColor.",
+      "tags": [
+        "integration",
+        "bridge",
+        "cross-chain",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/cryptchat.ts",
+      "type": "file",
+      "name": "cryptchat.ts",
+      "filePath": "src/integrations/cryptchat.ts",
+      "summary": "CryptChat encrypted social SDK integration. Wraps @cryptchat/sdk with brand injection via setBrand() method.",
+      "tags": [
+        "integration",
+        "cryptchat",
+        "social",
+        "sdk-wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/integrations/ceres.ts",
+      "type": "file",
+      "name": "ceres.ts",
+      "filePath": "src/integrations/ceres.ts",
+      "summary": "Ceres DID/social graph SDK integration. Provides brand-aware config object for @ceresv2/sdk integration.",
+      "tags": [
+        "integration",
+        "ceres",
+        "did",
+        "social-graph"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/templates/branding.json",
+      "type": "config",
+      "name": "branding.json",
+      "filePath": "src/templates/branding.json",
+      "summary": "Brand configuration template file with schema reference. Defines the structure for brand, chain, and features configuration.",
+      "tags": [
+        "config",
+        "template",
+        "branding",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/types.ts:defineBrand",
+      "type": "function",
+      "name": "defineBrand",
+      "filePath": "src/types.ts",
+      "summary": "Sets and returns the current brand configuration. Merges partial config with defaults using deepMerge.",
+      "tags": [
+        "function",
+        "brand",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/types.ts:getBrand",
+      "type": "function",
+      "name": "getBrand",
+      "filePath": "src/types.ts",
+      "summary": "Returns the current brand configuration object.",
+      "tags": [
+        "function",
+        "brand",
+        "accessor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/types.ts:deepMerge",
+      "type": "function",
+      "name": "deepMerge",
+      "filePath": "src/types.ts",
+      "summary": "Deep merges a partial source object into a target object, handling nested objects recursively.",
+      "tags": [
+        "function",
+        "utility",
+        "merge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/react/index.tsx:BrandProvider",
+      "type": "function",
+      "name": "BrandProvider",
+      "filePath": "src/react/index.tsx",
+      "summary": "React context provider component that injects brand CSS variables, favicon, and meta tags as side effects.",
+      "tags": [
+        "react",
+        "component",
+        "provider",
+        "brand"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/react/index.tsx:useBrand",
+      "type": "function",
+      "name": "useBrand",
+      "filePath": "src/react/index.tsx",
+      "summary": "React hook to access BrandConfig from context. Falls back to global brand for SSR scenarios.",
+      "tags": [
+        "react",
+        "hook",
+        "brand",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/react/index.tsx:BrandLogo",
+      "type": "function",
+      "name": "BrandLogo",
+      "filePath": "src/react/index.tsx",
+      "summary": "React component rendering the brand logo image based on variant (dark/light).",
+      "tags": [
+        "react",
+        "component",
+        "logo",
+        "brand"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/utils/css-vars.ts:injectCSSVars",
+      "type": "function",
+      "name": "injectCSSVars",
+      "filePath": "src/utils/css-vars.ts",
+      "summary": "Injects brand colors as CSS custom properties on document root. Supports Tailwind compatibility.",
+      "tags": [
+        "function",
+        "utility",
+        "css",
+        "brand-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/utils/favicon.ts:injectFavicon",
+      "type": "function",
+      "name": "injectFavicon",
+      "filePath": "src/utils/favicon.ts",
+      "summary": "Replaces or creates the favicon link element with the brand's favicon URL.",
+      "tags": [
+        "function",
+        "utility",
+        "favicon",
+        "brand-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/utils/meta.ts:injectMeta",
+      "type": "function",
+      "name": "injectMeta",
+      "filePath": "src/utils/meta.ts",
+      "summary": "Injects brand-aware meta tags including Open Graph, Twitter Card, title, and description.",
+      "tags": [
+        "function",
+        "utility",
+        "meta",
+        "seo",
+        "brand-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/cli/index.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "src/cli/index.ts",
+      "summary": "CLI entry point that parses arguments and dispatches to the appropriate command handler.",
+      "tags": [
+        "function",
+        "cli",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/cli/index.ts:detectProject",
+      "type": "function",
+      "name": "detectProject",
+      "filePath": "src/cli/index.ts",
+      "summary": "Detects which 0xAI product project is in the current directory by checking for characteristic files.",
+      "tags": [
+        "function",
+        "cli",
+        "detection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/cli/index.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "src/cli/index.ts",
+      "summary": "One-click full workflow command: generates branding.json, deploys contracts, builds and deploys to server.",
+      "tags": [
+        "function",
+        "cli",
+        "setup",
+        "deployment"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/cli/index.ts:deploy",
+      "type": "function",
+      "name": "deploy",
+      "filePath": "src/cli/index.ts",
+      "summary": "Builds and deploys a product to a remote server via SSH and rsync.",
+      "tags": [
+        "function",
+        "cli",
+        "deploy",
+        "devops"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/cli/index.ts:deployContracts",
+      "type": "function",
+      "name": "deployContracts",
+      "filePath": "src/cli/index.ts",
+      "summary": "Deploys smart contracts for a product using Forge (Foundry) or shell scripts.",
+      "tags": [
+        "function",
+        "cli",
+        "contracts",
+        "solidity"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/cli/index.ts:brand",
+      "type": "function",
+      "name": "brand",
+      "filePath": "src/cli/index.ts",
+      "summary": "Interactive CLI command to generate branding.json with user prompts.",
+      "tags": [
+        "function",
+        "cli",
+        "brand",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/cli/index.ts:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "src/cli/index.ts",
+      "summary": "Lists all white-label deployable products and checks current project branding.",
+      "tags": [
+        "function",
+        "cli",
+        "list"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/cli/index.ts:update",
+      "type": "function",
+      "name": "update",
+      "filePath": "src/cli/index.ts",
+      "summary": "Updates an existing deployment by re-deploying contracts and rebuilding the frontend.",
+      "tags": [
+        "function",
+        "cli",
+        "update",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/cli/types.ts:defineDeployer",
+      "type": "function",
+      "name": "defineDeployer",
+      "filePath": "src/cli/types.ts",
+      "summary": "Registers a deployer configuration with product-specific deployment settings.",
+      "tags": [
+        "function",
+        "cli",
+        "deployer",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/integrations/bitbyte.ts:createBitByteSDK",
+      "type": "function",
+      "name": "createBitByteSDK",
+      "filePath": "src/integrations/bitbyte.ts",
+      "summary": "Creates a brand-aware BitByteSDK wrapper that injects brand name and primary color.",
+      "tags": [
+        "function",
+        "integration",
+        "bitbyte",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/predx.ts:createPredXClient",
+      "type": "function",
+      "name": "createPredXClient",
+      "filePath": "src/integrations/predx.ts",
+      "summary": "Creates a brand-aware PredXClient wrapper that injects brand name and primary color.",
+      "tags": [
+        "function",
+        "integration",
+        "predx",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/zenonft.ts:createZenoNFT",
+      "type": "function",
+      "name": "createZenoNFT",
+      "filePath": "src/integrations/zenonft.ts",
+      "summary": "Creates a ZenoNFTSDK with brand injected via setBrand() method.",
+      "tags": [
+        "function",
+        "integration",
+        "zenonft",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/oxachain.ts:createOxaChainClient",
+      "type": "function",
+      "name": "createOxaChainClient",
+      "filePath": "src/integrations/oxachain.ts",
+      "summary": "Creates an OxaChainClient with brand injected via constructor options.",
+      "tags": [
+        "function",
+        "integration",
+        "oxachain",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/bridge.ts:createBridgeSDK",
+      "type": "function",
+      "name": "createBridgeSDK",
+      "filePath": "src/integrations/bridge.ts",
+      "summary": "Creates a brand-aware BridgeSDK wrapper that injects brand name and primary color.",
+      "tags": [
+        "function",
+        "integration",
+        "bridge",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/cryptchat.ts:createCryptChat",
+      "type": "function",
+      "name": "createCryptChat",
+      "filePath": "src/integrations/cryptchat.ts",
+      "summary": "Creates a CryptChatClient with brand injected via setBrand() method.",
+      "tags": [
+        "function",
+        "integration",
+        "cryptchat",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/integrations/ceres.ts:createCeresConfig",
+      "type": "function",
+      "name": "createCeresConfig",
+      "filePath": "src/integrations/ceres.ts",
+      "summary": "Creates a brand-aware Ceres configuration object with brand name and primary color.",
+      "tags": [
+        "function",
+        "integration",
+        "ceres",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/types.ts:BrandConfig",
+      "type": "class",
+      "name": "BrandConfig",
+      "filePath": "src/types.ts",
+      "summary": "Interface defining the complete brand configuration structure including brand info, chain settings, and feature flags.",
+      "tags": [
+        "interface",
+        "type",
+        "brand-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/cli/types.ts:DeployerConfig",
+      "type": "class",
+      "name": "DeployerConfig",
+      "filePath": "src/cli/types.ts",
+      "summary": "Interface defining product deployment configuration including Docker image, ports, environment variables, and hooks.",
+      "tags": [
+        "interface",
+        "type",
+        "deployer-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/integrations/bitbyte.ts:BitByteWithBrand",
+      "type": "class",
+      "name": "BitByteWithBrand",
+      "filePath": "src/integrations/bitbyte.ts",
+      "summary": "Interface for a brand-aware BitByte SDK wrapper exposing name, primaryColor, and getBrand().",
+      "tags": [
+        "interface",
+        "type",
+        "bitbyte",
+        "brand-wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/integrations/bridge.ts:BridgeWithBrand",
+      "type": "class",
+      "name": "BridgeWithBrand",
+      "filePath": "src/integrations/bridge.ts",
+      "summary": "Interface for a brand-aware Bridge SDK wrapper exposing name, primaryColor, and getBrand().",
+      "tags": [
+        "interface",
+        "type",
+        "bridge",
+        "brand-wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/integrations/ceres.ts:CeresBrandConfig",
+      "type": "class",
+      "name": "CeresBrandConfig",
+      "filePath": "src/integrations/ceres.ts",
+      "summary": "Interface for brand-aware Ceres configuration with brandName and primaryColor fields.",
+      "tags": [
+        "interface",
+        "type",
+        "ceres",
+        "brand-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "concept:white-label-branding",
+      "type": "concept",
+      "name": "White-Label Branding",
+      "filePath": "",
+      "summary": "Core concept of injecting custom brand identity (name, colors, logo, meta) into white-label products across the 0xAI ecosystem.",
+      "tags": [
+        "concept",
+        "branding",
+        "white-label"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "concept:cli-deployment",
+      "type": "concept",
+      "name": "CLI Deployment",
+      "filePath": "",
+      "summary": "Automated deployment workflow via CLI: brand config generation, smart contract deployment, frontend build, and server upload.",
+      "tags": [
+        "concept",
+        "deployment",
+        "cli",
+        "devops"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "concept:sdk-integration",
+      "type": "concept",
+      "name": "SDK Integration",
+      "filePath": "",
+      "summary": "Wrapper pattern for injecting white-label brand config into third-party SDKs for 8 ecosystem products.",
+      "tags": [
+        "concept",
+        "integration",
+        "sdk",
+        "wrapper"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/index.ts",
+      "target": "file:src/react/index.tsx",
+      "type": "exports",
+      "weight": 0.8,
+      "description": "Re-exports BrandProvider, useBrand, BrandLogo from React module",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/index.ts",
+      "target": "file:src/types.ts",
+      "type": "exports",
+      "weight": 0.8,
+      "description": "Re-exports defineBrand, getBrand, defaultBrand, BrandConfig from types module",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/index.ts",
+      "target": "file:src/utils/css-vars.ts",
+      "type": "exports",
+      "weight": 0.8,
+      "description": "Re-exports injectCSSVars from css-vars utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/index.ts",
+      "target": "file:src/utils/favicon.ts",
+      "type": "exports",
+      "weight": 0.8,
+      "description": "Re-exports injectFavicon from favicon utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/index.ts",
+      "target": "file:src/utils/meta.ts",
+      "type": "exports",
+      "weight": 0.8,
+      "description": "Re-exports injectMeta from meta utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/react/index.tsx",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports BrandConfig type and getBrand function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/react/index.tsx",
+      "target": "file:src/utils/css-vars.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports injectCSSVars utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/react/index.tsx",
+      "target": "file:src/utils/favicon.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports injectFavicon utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/react/index.tsx",
+      "target": "file:src/utils/meta.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports injectMeta utility",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/utils/css-vars.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports BrandConfig type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/utils/favicon.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports BrandConfig type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/utils/meta.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports BrandConfig type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/bitbyte.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/predx.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/zenonft.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/oxachain.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/bridge.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/cryptchat.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/ceres.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports getBrand from types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:bin/wl.js",
+      "target": "file:src/cli/index.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Dynamically imports CLI module",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/cli/index.ts",
+      "target": "file:src/cli/types.ts",
+      "type": "imports",
+      "weight": 0.7,
+      "description": "Imports DeployerConfig types",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/types.ts:defineBrand",
+      "target": "function:src/types.ts:deepMerge",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "defineBrand uses deepMerge to merge partial config with default",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/react/index.tsx:BrandProvider",
+      "target": "function:src/utils/css-vars.ts:injectCSSVars",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "BrandProvider calls injectCSSVars on mount",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/react/index.tsx:BrandProvider",
+      "target": "function:src/utils/favicon.ts:injectFavicon",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "BrandProvider calls injectFavicon on mount",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/react/index.tsx:BrandProvider",
+      "target": "function:src/utils/meta.ts:injectMeta",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "BrandProvider calls injectMeta on mount",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/react/index.tsx:useBrand",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "useBrand falls back to getBrand when no context available",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/react/index.tsx:BrandLogo",
+      "target": "function:src/react/index.tsx:useBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "BrandLogo uses useBrand hook to access brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/cli/index.ts:main",
+      "target": "function:src/cli/index.ts:detectProject",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "main calls detectProject to detect current product",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/cli/index.ts:setup",
+      "target": "function:src/cli/index.ts:deployContracts",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "setup calls deployContracts for contract deployment step",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/cli/index.ts:setup",
+      "target": "function:src/cli/index.ts:deploy",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "setup calls deploy for build and server deployment",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/cli/index.ts:update",
+      "target": "function:src/cli/index.ts:deployContracts",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "update calls deployContracts for re-deployment",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/cli/index.ts:update",
+      "target": "function:src/cli/index.ts:deploy",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "update calls deploy for rebuild and upload",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/bitbyte.ts:createBitByteSDK",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createBitByteSDK calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/predx.ts:createPredXClient",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createPredXClient calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/zenonft.ts:createZenoNFT",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createZenoNFT calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/oxachain.ts:createOxaChainClient",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createOxaChainClient calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/bridge.ts:createBridgeSDK",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createBridgeSDK calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/cryptchat.ts:createCryptChat",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createCryptChat calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/integrations/ceres.ts:createCeresConfig",
+      "target": "function:src/types.ts:getBrand",
+      "type": "calls",
+      "weight": 0.8,
+      "description": "createCeresConfig calls getBrand to read current brand config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/cli/index.ts",
+      "target": "concept:cli-deployment",
+      "type": "related",
+      "weight": 0.5,
+      "description": "CLI implementation of the deployment workflow concept",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/types.ts",
+      "target": "concept:white-label-branding",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Type definitions for the branding concept",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/bitbyte.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "BitByte SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/predx.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "PredX SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/zenonft.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "ZenoNFT SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/oxachain.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "OxaChain SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/bridge.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Bridge SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/cryptchat.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "CryptChat SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/integrations/ceres.ts",
+      "target": "concept:sdk-integration",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Ceres SDK integration pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:src/index.ts",
+      "type": "configures",
+      "weight": 0.6,
+      "description": "Package.json defines the entry point and exports for the SDK",
+      "direction": "forward"
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "file:src/index.ts",
+      "type": "configures",
+      "weight": 0.6,
+      "description": "TypeScript config compiles src/ for the SDK",
+      "direction": "forward"
+    },
+    {
+      "source": "config:src/templates/branding.json",
+      "target": "concept:white-label-branding",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Template file for brand configuration structure",
+      "direction": "forward"
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/index.ts",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "README documents the SDK entry point and React integration",
+      "direction": "forward"
+    },
+    {
+      "source": "document:DOCS.md",
+      "target": "file:src/cli/index.ts",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "DOCS covers CLI deployment workflow in detail",
+      "direction": "forward"
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:core-types",
+      "name": "Core Types & Brand Config",
+      "description": "Brand configuration type definitions, default brand values, and brand state management functions (defineBrand, getBrand). Foundation layer that all other modules depend on.",
+      "nodeIds": [
+        "file:src/types.ts",
+        "config:src/templates/branding.json"
+      ]
+    },
+    {
+      "id": "layer:sdk-entry-point",
+      "name": "SDK Entry Point",
+      "description": "Main package entry point that re-exports all public API surfaces from sub-modules. Consumers import from '@0xainetoem/white-label'.",
+      "nodeIds": [
+        "file:src/index.ts",
+        "config:package.json",
+        "config:tsconfig.json"
+      ]
+    },
+    {
+      "id": "layer:react-integration",
+      "name": "React Integration",
+      "description": "React context provider, hook, and components for automatic brand injection in React applications. Injects CSS variables, favicon, and meta tags.",
+      "nodeIds": [
+        "file:src/react/index.tsx",
+        "file:src/utils/css-vars.ts",
+        "file:src/utils/favicon.ts",
+        "file:src/utils/meta.ts"
+      ]
+    },
+    {
+      "id": "layer:sdk-integrations",
+      "name": "SDK Integrations",
+      "description": "Brand-aware wrappers for 8 ecosystem product SDKs (BitByte, PredX, ZenoNFT, OxaChain, Bridge, CryptChat, Ceres). Each wraps a third-party SDK to inject white-label brand config.",
+      "nodeIds": [
+        "file:src/integrations/bitbyte.ts",
+        "file:src/integrations/predx.ts",
+        "file:src/integrations/zenonft.ts",
+        "file:src/integrations/oxachain.ts",
+        "file:src/integrations/bridge.ts",
+        "file:src/integrations/cryptchat.ts",
+        "file:src/integrations/ceres.ts"
+      ]
+    },
+    {
+      "id": "layer:cli-deployment",
+      "name": "CLI Deployment Tool",
+      "description": "Command-line interface for white-label deployment: brand config generation, smart contract deployment, frontend build, and server upload via SSH. Supports all 8 products with product-specific logic.",
+      "nodeIds": [
+        "file:bin/wl.js",
+        "file:src/cli/index.ts",
+        "file:src/cli/types.ts"
+      ]
+    },
+    {
+      "id": "layer:documentation",
+      "name": "Documentation",
+      "description": "Project documentation including README quick-start guide and detailed usage manual.",
+      "nodeIds": [
+        "document:README.md",
+        "document:DOCS.md"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "项目概览",
+      "description": "从 README 文档开始，了解项目的用途和整体架构。white-label SDK 为 0xAI 生态的 8 个产品提供统一的白标品牌注入解决方案。",
+      "nodeIds": [
+        "document:README.md",
+        "document:DOCS.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "核心类型系统",
+      "description": "BrandConfig 接口定义了完整的品牌配置结构，包括品牌信息、链配置和功能标志。defineBrand/getBrand 函数管理全局品牌状态，deepMerge 工具实现默认值与自定义配置的合并。",
+      "nodeIds": [
+        "file:src/types.ts"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "SDK 入口点",
+      "description": "主入口文件集中导出所有公共 API，包括 React 组件、品牌工具函数和类型。package.json 定义了多入口导出路径。",
+      "nodeIds": [
+        "file:src/index.ts",
+        "config:package.json"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "React 集成",
+      "description": "BrandProvider 组件通过 React Context 提供品牌配置，自动注入 CSS 变量、favicon 和 meta 标签。useBrand Hook 让组件可以访问品牌配置，BrandLogo 组件渲染品牌 Logo。",
+      "nodeIds": [
+        "file:src/react/index.tsx",
+        "file:src/utils/css-vars.ts",
+        "file:src/utils/favicon.ts",
+        "file:src/utils/meta.ts"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "SDK 集成层",
+      "description": "7 个 SDK 集成模块为 0xAI 生态产品提供品牌感知的 SDK 包装。每个集成模块从 white-label 配置读取品牌信息并注入到对应的第三方 SDK 中。",
+      "nodeIds": [
+        "file:src/integrations/bitbyte.ts",
+        "file:src/integrations/predx.ts",
+        "file:src/integrations/zenonft.ts",
+        "file:src/integrations/oxachain.ts",
+        "file:src/integrations/bridge.ts",
+        "file:src/integrations/cryptchat.ts",
+        "file:src/integrations/ceres.ts"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "CLI 部署工具",
+      "description": "命令行工具提供完整的白标部署工作流：品牌配置生成、智能合约部署、前端构建和服务器上传。支持 8 个产品的自动化部署，包含产品检测和一键式 setup 命令。",
+      "nodeIds": [
+        "file:bin/wl.js",
+        "file:src/cli/index.ts",
+        "file:src/cli/types.ts"
+      ]
+    }
+  ]
+}
