@@ -123,27 +123,33 @@
       "fileCategory": "code"
     },
     {
+      "path": "src/ambient.d.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
       "path": "tsconfig.json",
       "language": "json",
       "sizeLines": 19,
       "fileCategory": "config"
     }
   ],
-  "totalFiles": 21,
+  "totalFiles": 22,
   "filteredByIgnore": 0,
   "estimatedComplexity": "small",
   "stats": {
-    "filesScanned": 21,
+    "filesScanned": 22,
     "byCategory": {
       "docs": 2,
-      "code": 16,
+      "code": 17,
       "config": 3
     },
     "byLanguage": {
       "markdown": 2,
       "javascript": 1,
       "json": 3,
-      "typescript": 15
+      "typescript": 16
     }
   },
   "name": "@0xainetoem/white-label",

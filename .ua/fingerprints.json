@@ -1,8 +1,28 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "ec92feb763bb2841b16cd3a5d2f228bf58f68e7c",
-  "generatedAt": "2026-07-30T00:09:45.404Z",
+  "gitCommitHash": "c4971271e7fb95755824a9a926eb90e9513b4855",
+  "generatedAt": "2026-07-31T00:28:47.965Z",
   "files": {
+    "DOCS.md": {
+      "filePath": "DOCS.md",
+      "contentHash": "0500e187146c2a117ee3eae6a555bffb26c0ff8901ed23d1b53b58e5802ee9e2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1643,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "e87a5dade35b0873c4d2eb1cd415b9e7703ce1f418d3df554953004b5562b7dc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 576,
+      "hasStructuralAnalysis": true
+    },
     "bin/wl.js": {
       "filePath": "bin/wl.js",
       "contentHash": "5ea14ea4462bf58df8947481e410c1b3b8f2b1a7813c6d7697dc942425316366",
@@ -11,6 +31,16 @@
       "imports": [],
       "exports": [],
       "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "82e4760d57ae891ad18847540b7b7513b9667690d328f0b289e3c2397d303d76",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 116,
       "hasStructuralAnalysis": true
     },
     "src/cli/index.ts": {
@@ -566,6 +596,16 @@
       "totalLines": 56,
       "hasStructuralAnalysis": true
     },
+    "src/templates/branding.json": {
+      "filePath": "src/templates/branding.json",
+      "contentHash": "609e41f01755ee6ca29f1f780d869f7658a1388242dbc53f1b606eb3f61c2536",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
     "src/types.ts": {
       "filePath": "src/types.ts",
       "contentHash": "b15f9315f722640a263583684167a80d47a19eb6259b55cb5a36e319e567d0cf",
@@ -707,6 +747,26 @@
         "injectMeta"
       ],
       "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/ambient.d.ts": {
+      "filePath": "src/ambient.d.ts",
+      "contentHash": "015b596e52e1f6ed7f261c300ef4ee391eeee0edba958a066ac6dfb4402eb123",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "48274ffed9529d2a52380d72b45d144e0f9ae2ee4d5bb0b7eb70a2f072a6f0b6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20,
       "hasStructuralAnalysis": true
     }
   }

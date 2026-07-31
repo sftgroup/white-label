@@ -12,51 +12,10 @@
       "React"
     ],
     "description": "White-label SDK for 0xAI ecosystem — brand injection, CLI deployment, SDK integrations",
-    "analyzedAt": "2026-07-30T00:08:55.484Z",
-    "gitCommitHash": "ec92feb763bb2841b16cd3a5d2f228bf58f68e7c"
+    "analyzedAt": "2026-07-31T00:28:52.000Z",
+    "gitCommitHash": "c4971271e7fb95755824a9a926eb90e9513b4855"
   },
   "nodes": [
-    {
-      "id": "document:README.md",
-      "type": "document",
-      "name": "README.md",
-      "filePath": "README.md",
-      "summary": "Project overview and quick-start guide for the white-label SDK. Documents CLI usage, React integration, and deployment workflow for all 8 ecosystem products.",
-      "tags": [
-        "documentation",
-        "readme",
-        "quickstart"
-      ],
-      "complexity": "simple",
-      "languageNotes": "Written in Chinese"
-    },
-    {
-      "id": "document:DOCS.md",
-      "type": "document",
-      "name": "DOCS.md",
-      "filePath": "DOCS.md",
-      "summary": "Detailed usage manual covering architecture overview, CI/CD integration, Nginx configuration, troubleshooting, and step-by-step white-label guides for each product.",
-      "tags": [
-        "documentation",
-        "manual",
-        "guide"
-      ],
-      "complexity": "moderate",
-      "languageNotes": "Written in Chinese"
-    },
-    {
-      "id": "config:package.json",
-      "type": "config",
-      "name": "package.json",
-      "filePath": "package.json",
-      "summary": "NPM package manifest for @0xainetoem/white-label. Defines exports for React, CLI, and 8 SDK integrations, peer dependencies, and build scripts.",
-      "tags": [
-        "config",
-        "npm",
-        "package-manifest"
-      ],
-      "complexity": "simple"
-    },
     {
       "id": "config:tsconfig.json",
       "type": "config",
@@ -755,6 +714,62 @@
         "wrapper"
       ],
       "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview and quick-start guide for the white-label SDK. Documents CLI usage, React integration, deployment workflow, and npm publish instructions for all 8 ecosystem products. Updated with v1.0.0 release notes and optional SDK dependency handling.",
+      "tags": [
+        "documentation",
+        "readme",
+        "quickstart"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Written in Chinese"
+    },
+    {
+      "id": "document:DOCS.md",
+      "type": "document",
+      "name": "DOCS.md",
+      "filePath": "DOCS.md",
+      "summary": "Detailed usage manual covering architecture overview, CI/CD integration, Nginx configuration, troubleshooting, and step-by-step white-label guides. Updated with ambient declaration support for unpublished SDKs and version history table.",
+      "tags": [
+        "documentation",
+        "manual",
+        "guide"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Written in Chinese"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "NPM package manifest for @0xainetoem/white-label. Defines exports for React, CLI, and 8 SDK integrations, peer dependencies, and build scripts. Removed 'templates' from published files list.",
+      "tags": [
+        "config",
+        "npm",
+        "package-manifest"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/ambient.d.ts",
+      "type": "file",
+      "name": "ambient.d.ts",
+      "filePath": "src/ambient.d.ts",
+      "summary": "Ambient type declarations for optional peer dependencies not yet published to npm (@0xbridge/sdk, @0xpredx/sdk, oxachain-sdk). Ensures TypeScript compilation passes without the actual SDK packages installed.",
+      "tags": [
+        "types",
+        "ambient",
+        "declaration",
+        "peer-dependency",
+        "type-stubs"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
@@ -1143,14 +1158,6 @@
       "direction": "forward"
     },
     {
-      "source": "config:package.json",
-      "target": "file:src/index.ts",
-      "type": "configures",
-      "weight": 0.6,
-      "description": "Package.json defines the entry point and exports for the SDK",
-      "direction": "forward"
-    },
-    {
       "source": "config:tsconfig.json",
       "target": "file:src/index.ts",
       "type": "configures",
@@ -1179,7 +1186,47 @@
       "target": "file:src/cli/index.ts",
       "type": "documents",
       "weight": 0.5,
-      "description": "DOCS covers CLI deployment workflow in detail",
+      "description": "DOCS covers CLI deployment workflow and ambient declaration setup in detail",
+      "direction": "forward"
+    },
+    {
+      "source": "document:DOCS.md",
+      "target": "file:src/ambient.d.ts",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "DOCS documents the ambient declaration pattern for unpublished SDKs",
+      "direction": "forward"
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:src/index.ts",
+      "type": "configures",
+      "weight": 0.6,
+      "description": "Package.json defines the entry point and exports for the SDK",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/ambient.d.ts",
+      "target": "file:src/integrations/bridge.ts",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Provides ambient types for @0xbridge/sdk used by bridge integration",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/ambient.d.ts",
+      "target": "file:src/integrations/predx.ts",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Provides ambient types for @0xpredx/sdk used by predx integration",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/ambient.d.ts",
+      "target": "file:src/integrations/oxachain.ts",
+      "type": "related",
+      "weight": 0.5,
+      "description": "Provides ambient types for oxachain-sdk used by oxachain integration",
       "direction": "forward"
     }
   ],
@@ -1225,7 +1272,8 @@
         "file:src/integrations/oxachain.ts",
         "file:src/integrations/bridge.ts",
         "file:src/integrations/cryptchat.ts",
-        "file:src/integrations/ceres.ts"
+        "file:src/integrations/ceres.ts",
+        "file:src/ambient.d.ts"
       ]
     },
     {
