@@ -415,7 +415,7 @@ const client = createOxaChainClient({ rpcUrl: 'http://localhost:18545' });
 console.log(client.getBrand().name); // "MyChain"
 ```
 
-> **注意**：这些 SDK 是可选依赖（`peerDependenciesMeta.optional=true`），需项目中额外 `npm install` 对应 SDK 包。
+> **注意**：这些 SDK 是可选依赖（`peerDependenciesMeta.optional=true`），需项目中额外 `npm install` 对应 SDK 包。如果 SDK 尚未发布到 npm（如 `@0xbridge/sdk`），SDK 包装器会优雅降级并提示安装。
 
 ---
 
@@ -559,12 +559,14 @@ interface BrandConfig {
 
 ## 发布到 npm
 
+当前版本：**v1.0.0**（已发布）
+
 ```bash
 npm run build                    # TypeScript 编译
 npm publish                     # 发布 @0xainetoem/white-label
-
-# 重要：publishConfig.access = "public"（scoped 包需要）
 ```
+
+> 注意：`publishConfig.access = "public"`（scoped 包需要）。包体积约 27.5 kB（压缩）/ 108.5 kB（解压），共 63 个文件。
 
 ---
 

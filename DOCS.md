@@ -664,10 +664,12 @@ const ceresConfig = createCeresConfig();
 ```json
 {
   "peerDependencies": {
-    "@bitbytev4/sdk": "^2.0.0"   // 可选：不安装也没关系
+    "@bitbytev4/sdk": "^2.0.0",   // 可选：不安装也没关系
+    "@0xbridge/sdk": "latest"     // 可选：未发布到 npm 时 Warning 不影响编译
   },
   "peerDependenciesMeta": {
-    "@bitbytev4/sdk": { "optional": true }
+    "@bitbytev4/sdk": { "optional": true },
+    "@0xbridge/sdk": { "optional": true }
   }
 }
 ```
@@ -681,6 +683,25 @@ npm install @0xainetoem/white-label
 # 需要 OxaChain SDK 包装
 npm install @0xainetoem/white-label oxachain-sdk
 ```
+
+#### 6.4.1 SDK 尚未发布到 npm 时的处理
+
+部分 SDK（如 `@0xbridge/sdk`）可能尚未发布到 npm registry。white-label SDK 通过 `src/ambient.d.ts` 中的类型声明确保编译通过：
+
+```ts
+// src/ambient.d.ts — 为可选依赖提供最小类型声明
+declare module '@0xbridge/sdk' {
+  export class BridgeSDK {
+    constructor(opts: { bridgeAddress: string; rpcUrl?: string; ... });
+  }
+}
+```
+
+- **编译时**：TypeScript 使用 ambient 声明，构建正常通过 ✅
+- **运行时**：`try/catch` 加载，未安装时优雅降级并提示安装 ⚠️
+- **安装后**：ambient 声明被真实 SDK 类型覆盖，获得完整类型支持 🔄
+
+添加新 SDK 包装器时，同步在 `src/ambient.d.ts` 中注册对应的 `declare module`。
 
 ---
 
@@ -1594,14 +1615,20 @@ npm publish
 git push --tags
 ```
 
-### 17.2 版本号策略
+### 17.2 版本历史与策略
 
-| 版本 | 说明 |
-|:----:|------|
-| `1.0.0` | 初始版本 |
-| `1.1.0` | 新增产品 SDK 包装器 |
-| `1.2.0` | 新增 CLI 命令 |
-| `1.1.1` | Bug 修复 |
+| 版本 | 日期 | 说明 |
+|:----:|:----:|------|
+| `1.0.0` | 2026-07-31 | 🆕 当前最新 — SDK 包装器、Ceres 双模式、CLI 增强、DOCS.md |
+| `0.4.1` | 2026-07-27 | 内部测试版本 |
+
+建议版本演进：
+
+| 类型 | 示例 | 说明 |
+|:----:|:----:|------|
+| `1.1.0` | 新增产品 SDK 包装器 | 新增 CLI 命令或产品集成 |
+| `1.1.1` | Bug 修复 | 修复现有功能问题 |
+| `2.0.0` | 新增公开 API 可能破坏兼容性 | 不兼容变更 |
 
 ### 17.3 发布前检查清单
 
