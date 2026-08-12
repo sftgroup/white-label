@@ -1,7 +1,7 @@
 /**
  * @0xainetoem/white-label — 0xBridge 集成
  *
- * 自动从 white-label 品牌配置注入到 @0xbridge/sdk。
+ * 自动从 white-label 品牌配置注入到 @0xaibridge/sdk。
  *
  * @example
  * ```ts
@@ -17,10 +17,10 @@
  * console.log(sdk.getBrand().name); // "MyBridge"
  * ```
  *
- * @requires npm install @0xbridge/sdk
+ * @requires npm install @0xaibridge/sdk
  */
 
-import { BridgeSDK } from '@0xbridge/sdk';
+import { BridgeSDK } from '@0xaibridge/sdk';
 import { getBrand } from '../types.js';
 
 interface BridgeSDKOpts {

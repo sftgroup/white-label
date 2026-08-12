@@ -665,11 +665,11 @@ const ceresConfig = createCeresConfig();
 {
   "peerDependencies": {
     "@bitbytev4/sdk": "^2.0.0",   // 可选：不安装也没关系
-    "@0xbridge/sdk": "latest"     // 可选：未发布到 npm 时 Warning 不影响编译
+    "@0xaibridge/sdk": "latest"  // 可选：已发布到 npm（@0xaibridge/sdk）
   },
   "peerDependenciesMeta": {
     "@bitbytev4/sdk": { "optional": true },
-    "@0xbridge/sdk": { "optional": true }
+    "@0xaibridge/sdk": { "optional": true }
   }
 }
 ```
@@ -686,11 +686,11 @@ npm install @0xainetoem/white-label oxachain-sdk
 
 #### 6.4.1 SDK 尚未发布到 npm 时的处理
 
-部分 SDK（如 `@0xbridge/sdk`）可能尚未发布到 npm registry。white-label SDK 通过 `src/ambient.d.ts` 中的类型声明确保编译通过：
+部分 SDK（如 `@0xaibridge/sdk`）可能尚未发布到 npm registry。white-label SDK 通过 `src/ambient.d.ts` 中的类型声明确保编译通过：
 
 ```ts
 // src/ambient.d.ts — 为可选依赖提供最小类型声明
-declare module '@0xbridge/sdk' {
+declare module '@0xaibridge/sdk' {
   export class BridgeSDK {
     constructor(opts: { bridgeAddress: string; rpcUrl?: string; ... });
   }
@@ -1619,7 +1619,8 @@ git push --tags
 
 | 版本 | 日期 | 说明 |
 |:----:|:----:|------|
-| `1.0.0` | 2026-07-31 | 🆕 当前最新 — SDK 包装器、Ceres 双模式、CLI 增强、DOCS.md |
+| `1.0.1` | 2026-08-12 | 🆕 当前最新 — 修复 bridge SDK 包名（`@0xbridge/sdk` → `@0xaibridge/sdk`） |
+| `1.0.0` | 2026-07-31 | SDK 包装器、Ceres 双模式、CLI 增强、DOCS.md |
 | `0.4.1` | 2026-07-27 | 内部测试版本 |
 
 建议版本演进：

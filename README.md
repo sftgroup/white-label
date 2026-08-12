@@ -400,7 +400,7 @@ Tailwind 中使用：
 | `@0xainetoem/white-label/bitbyte` | `createBitByteSDK()` | `@bitbytev4/sdk` | 包装对象 `getBrand()` |
 | `@0xainetoem/white-label/predx` | `createPredXClient()` | `@0xpredx/sdk` | 包装对象 `getBrand()` |
 | `@0xainetoem/white-label/ceres` | `createCeresConfig()` | `@ceresv2/sdk` | 配置对象（CeresProvider） |
-| `@0xainetoem/white-label/bridge` | `createBridgeSDK()` | `@0xbridge/sdk` | 包装对象 `getBrand()` |
+| `@0xainetoem/white-label/bridge` | `createBridgeSDK()` | `@0xaibridge/sdk` | 包装对象 `getBrand()` |
 | `@0xainetoem/white-label/cryptchat` | `createCryptChat()` | `@cryptchat/sdk` | 包装对象 `getBrand()` |
 | `@0xainetoem/white-label/zenonft` | `createZenoNFT()` | `@zenonft/sdk` | 包装对象 `getBrand()` |
 
@@ -415,7 +415,7 @@ const client = createOxaChainClient({ rpcUrl: 'http://localhost:18545' });
 console.log(client.getBrand().name); // "MyChain"
 ```
 
-> **注意**：这些 SDK 是可选依赖（`peerDependenciesMeta.optional=true`），需项目中额外 `npm install` 对应 SDK 包。如果 SDK 尚未发布到 npm（如 `@0xbridge/sdk`），SDK 包装器会优雅降级并提示安装。
+> **注意**：这些 SDK 是可选依赖（`peerDependenciesMeta.optional=true`），需项目中额外 `npm install` 对应 SDK 包。如果 SDK 尚未发布到 npm（如 `@0xaibridge/sdk`），SDK 包装器会优雅降级并提示安装。
 
 ---
 
@@ -496,7 +496,7 @@ white-label/
 │   │   ├── bitbyte.ts                  # @bitbytev4/sdk 包装器
 │   │   ├── predx.ts                    # @0xpredx/sdk 包装器
 │   │   ├── ceres.ts                    # @ceresv2/sdk 包装器
-│   │   ├── bridge.ts                   # @0xbridge/sdk 包装器
+│   │   ├── bridge.ts                   # @0xaibridge/sdk 包装器
 │   │   ├── oxachain.ts                 # oxachain-sdk 包装器
 │   │   ├── cryptchat.ts                # @cryptchat/sdk 包装器
 │   │   └── zenonft.ts                  # @zenonft/sdk 包装器
@@ -559,7 +559,7 @@ interface BrandConfig {
 
 ## 发布到 npm
 
-当前版本：**v1.0.0**（已发布）
+当前版本：**v1.0.1**（已发布）
 
 ```bash
 npm run build                    # TypeScript 编译

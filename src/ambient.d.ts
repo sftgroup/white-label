@@ -1,7 +1,7 @@
 // Ambient declarations for optional peer dependencies not published to npm yet.
 // These packages are loaded dynamically via try/catch at runtime.
 
-declare module '@0xbridge/sdk' {
+declare module '@0xaibridge/sdk' {
   export class BridgeSDK {
     constructor(opts: {
       bridgeAddress: string;
