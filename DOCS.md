@@ -1619,7 +1619,8 @@ git push --tags
 
 | 版本 | 日期 | 说明 |
 |:----:|:----:|------|
-| `1.0.1` | 2026-08-12 | 🆕 当前最新 — 修复 bridge SDK 包名（`@0xbridge/sdk` → `@0xaibridge/sdk`） |
+| `1.0.2` | 2026-08-12 | 🆕 当前最新 — 修复 CLI：ESM 下 readline 崩溃（P0）、nginx `$host` 转义（P1）、移除 branding.json 私钥（P1）、branding.json 路径修正（P1） |
+| `1.0.1` | 2026-08-12 | 修复 bridge SDK 包名（`@0xbridge/sdk` → `@0xaibridge/sdk`） |
 | `1.0.0` | 2026-07-31 | SDK 包装器、Ceres 双模式、CLI 增强、DOCS.md |
 | `0.4.1` | 2026-07-27 | 内部测试版本 |
 

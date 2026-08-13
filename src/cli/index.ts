@@ -4,6 +4,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
+import { createInterface } from 'readline';
 
 // ====== 项目检测 ======
 
@@ -182,7 +183,7 @@ function main() {
 
 // ====== wl brand ======
 function brand() {
-  const readline = require('readline').createInterface({
+  const readline = createInterface({
     input: process.stdin,
     output: process.stdout,
   });
@@ -223,7 +224,7 @@ function brand() {
       branding.token = { name: 'Test Token', symbol: 'TT', decimals: 18, initialAllocWei: '100000000000000000000000' };
       branding.deploy = { imageName: 'oxachain/geth', imageTag: 'latest', containerPrefix: 'oxachain', networkName: 'oxachain', dockerPassword: 'oxachain', binaryName: 'oxachain-geth', buildTarget: 'oxachain' };
     } else if (project === 'bitbyte' || project === 'predx') {
-      branding.deployer = { privateKey: '' };
+      // 私钥仅在部署时通过 --key 传入，不写入 branding.json
     }
 
     fs.writeFileSync('branding.json', JSON.stringify(branding, null, 2));
@@ -289,7 +290,6 @@ function setup(args: string[]) {
       social: { twitter: '', discord: '', telegram: '' },
     },
     chain: { network: chain, rpcUrl: rpc, chainId, explorerUrl: '', nativeToken: '' },
-    deployer: { privateKey: key },
   };
 
   // 项目特定字段
@@ -312,9 +312,13 @@ function setup(args: string[]) {
     branding.features = { enabledChains: ['SEPOLIA', 'L1', 'BSC_TESTNET'] };
   }
 
+  // 各产品实际读取 branding.json 的路径（与 detectProject / defineBrand 保持一致）
   const brandPath = project === 'bridge' ? 'frontend-bridge/src/branding.json'
     : project === 'zenonft' ? 'frontend/src/branding.json'
+    : project === 'bitbyte' ? 'frontend-max-react/src/branding.json'
+    : project === 'ceres' ? 'frontend-v2/frontend/src/branding.json'
     : 'branding.json';
+  fs.mkdirSync(path.dirname(brandPath), { recursive: true });
   fs.writeFileSync(brandPath, JSON.stringify(branding, null, 2));
   console.log('   已生成 branding.json');
 
@@ -380,7 +384,7 @@ function deploy(args: string[]) {
     console.log('[3/5] 启动服务...');
     execSync(`ssh ${server} "cd /opt/${product} && docker compose up -d"`, { stdio: 'inherit' });
     console.log('[4/5] 配置 Nginx + SSL...');
-    const nginxConf = `server {\n  listen 80;\n  server_name ${domain};\n  location / {\n    proxy_pass http://127.0.0.1:3000;\n    proxy_http_version 1.1;\n    proxy_set_header Host $host;\n  }\n}`;
+    const nginxConf = `server {\n  listen 80;\n  server_name ${domain};\n  location / {\n    proxy_pass http://127.0.0.1:3000;\n    proxy_http_version 1.1;\n    proxy_set_header Host \\$host;\n  }\n}`;
     execSync(`ssh ${server} "echo '${nginxConf.replace(/'/g, "'\\''")}' > /etc/nginx/sites-available/${domain} && ln -sf /etc/nginx/sites-available/${domain} /etc/nginx/sites-enabled/ && systemctl reload nginx"`, { stdio: 'inherit' });
     console.log('[5/5] 健康检查...');
     try { execSync(`curl -sI https://${domain}`, { stdio: 'inherit' }); } catch {}

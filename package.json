@@ -1,6 +1,6 @@
 {
   "name": "@0xainetoem/white-label",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "White-label SDK for 0xAI ecosystem — brand injection, CLI deployment, SDK integrations",
   "type": "module",
   "main": "./dist/index.js",

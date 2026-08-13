@@ -559,7 +559,7 @@ interface BrandConfig {
 
 ## 发布到 npm
 
-当前版本：**v1.0.1**（已发布）
+当前版本：**v1.0.2**（已发布）
 
 ```bash
 npm run build                    # TypeScript 编译
